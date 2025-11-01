@@ -29,7 +29,7 @@ const Register = () => {
       pass: "",
     });
 
-      fetch('http://localhost:8000/register', {
+      fetch('https://stockly-ws2t.onrender.com/register', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
