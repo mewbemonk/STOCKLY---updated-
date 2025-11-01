@@ -19,7 +19,7 @@ const Login = ({ setIsLoggedIn }) => {
     if(!user.email || !user.pass){
         return
     }
-    fetch("http://localhost:8000/login", {
+    fetch("https://stockly-ws2t.onrender.com", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
