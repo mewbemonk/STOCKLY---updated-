@@ -75,14 +75,20 @@ STOCKLY/
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/your-username/stockverse.git
-cd stockverse
+cd STOCKLY
 
 
-cd client
-npm install
+# Frontend Setup
+cd Frontend
+npm install        # Installs React, Vite, and plugins
+npm run dev        # Starts the frontend dev server at localhost:5173
 
-cd ../server
-npm install
+# Backend Setup
+cd ../Backend
+npm install        # Installs Express and other backend dependencies
+npm start          # Or: node server.js (depending on your setup)
+
+
 
 
 
