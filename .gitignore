@@ -1,0 +1,36 @@
+# Node.js (Backend)
+Backend/node_modules/
+Backend/.env
+Backend/.DS_Store
+
+# React (Frontend)
+frontend/node_modules/
+frontend/.env
+frontend/.DS_Store
+frontend/build/
+
+# Streamlit (ML_model)
+ML_model/__pycache__/
+ML_model/.DS_Store
+ML_model/.env
+ML_model/.streamlit/secrets.toml
+
+# Logs and system files
+*.log
+*.sqlite
+*.pyc
+*.pkl
+*.joblib
+.DS_Store
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.sublime-workspace
+*.sublime-project
