@@ -6,90 +6,35 @@ const Nav = () => {
     <>
       <Banner />
 
-      <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm">
-        <span className="text-orange-400 font-bold text-4xl ">STOCKLY</span>
+<nav className="z-50 flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between w-full gap-4 md:gap-0 py-4 px-4 sm:px-6 md:px-16 lg:px-24 xl:px-40 text-sm bg-slate-900">
+  <span className="text-orange-400 font-bold text-3xl sm:text-4xl whitespace-nowrap">STOCKLY</span>
 
-        <div>
-          <ul className="hidden md:flex items-center gap-8 transition duration-500 text-slate-800">
-            <li className="text-white text-xl font-bold hover:text-indigo-600 transition">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-600 underline transition" : ""
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="text-white text-xl font-bold hover:text-indigo-600 transition">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-600 underline transition" : ""
-                }
-                to="dashboard"
-              >
-                Dashboard
-              </NavLink>
-            </li>
-            <li className="text-white text-xl font-bold hover:text-indigo-600 transition">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-600 underline transition" : ""
-                }
-                to="news"
-              >
-                News
-              </NavLink>
-            </li>
-            <li className="text-white text-xl font-bold hover:text-indigo-600 transition">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-600 underline transition" : ""
-                }
-                to="register"
-              >
-                Register
-              </NavLink>
-            </li>
-            <li className="text-white text-xl font-bold hover:text-indigo-600 transition">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-600 underline transition" : ""
-                }
-                to="predict"
-              >
-                Prediction
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+<ul className="flex flex-row flex-wrap items-center justify-center gap-4 lg:gap-8 w-full max-w-full overflow-hidden text-white text-base sm:text-lg md:text-xl font-bold transition duration-500">
 
-        <div className="flex gap-2">
-          <NavLink
-            to="login"
-            className="hidden md:block px-6 py-2 border bg-green-400 active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900"
-          >
-            Login
-          </NavLink>
-        </div>
+    <li className="text-white text-base sm:text-lg md:text-xl font-bold hover:text-indigo-600 transition">
+      <NavLink to="/" className={({ isActive }) => isActive ? "text-indigo-600 underline transition" : ""}>Home</NavLink>
+    </li>
+    <li className="text-white text-base sm:text-lg md:text-xl font-bold hover:text-indigo-600 transition">
+      <NavLink to="dashboard" className={({ isActive }) => isActive ? "text-indigo-600 underline transition" : ""}>Dashboard</NavLink>
+    </li>
+    <li className="text-white text-base sm:text-lg md:text-xl font-bold hover:text-indigo-600 transition">
+      <NavLink to="news" className={({ isActive }) => isActive ? "text-indigo-600 underline transition" : ""}>News</NavLink>
+    </li>
+    <li className="text-white text-base sm:text-lg md:text-xl font-bold hover:text-indigo-600 transition">
+      <NavLink to="register" className={({ isActive }) => isActive ? "text-indigo-600 underline transition" : ""}>Register</NavLink>
+    </li>
+    <li className="text-white text-base sm:text-lg md:text-xl font-bold hover:text-indigo-600 transition">
+      <NavLink to="predict" className={({ isActive }) => isActive ? "text-indigo-600 underline transition" : ""}>Prediction</NavLink>
+    </li>
+  </ul>
 
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="md:hidden active:scale-90 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="lucide lucide-menu"
-          >
-            <path d="M4 5h16M4 12h16M4 19h16" />
-          </svg>
-        </button>
-      </nav>
+  <NavLink
+    to="login"
+    className="px-4 py-2 border bg-green-400 active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900 text-sm sm:text-base whitespace-nowrap"
+  >
+    Login
+  </NavLink>
+</nav>
     </>
   );
 };

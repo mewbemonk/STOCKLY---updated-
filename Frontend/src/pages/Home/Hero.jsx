@@ -19,9 +19,7 @@ const Hero = () => {
           className={`fixed inset-0 z-[100] bg-black/40 text-black backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
-        >
-        
-        </div>
+        ></div>
 
         {/* Hero Section */}
         <div className="relative flex flex-col items-center justify-center text-sm px-4 md:px-16 lg:px-24 xl:px-40 text-black">
@@ -30,35 +28,24 @@ const Hero = () => {
           {/* Avatars + Stars */}
           <div className="flex items-center mt-24">
             <div className="flex -space-x-3 pr-3">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
-                alt="user3"
-                className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[1]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
-                alt="user1"
-                className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-2"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-                alt="user2"
-                className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[3]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
-                alt="user3"
-                className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[4]"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/men/75.jpg"
-                alt="user5"
-                className="size-8 rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[5]"
-              />
+              {[
+                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
+                "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+                "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
+                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
+                "https://randomuser.me/api/portraits/men/75.jpg",
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`user${i}`}
+                  className="size-8 object-cover rounded-full border-2 border-white hover:-translate-y-0.5 transition z-[1]"
+                />
+              ))}
             </div>
 
             <div>
-              <div className="flex ">
+              <div className="flex">
                 {Array(5)
                   .fill(0)
                   .map((_, i) => (
@@ -85,27 +72,26 @@ const Hero = () => {
           </div>
 
           {/* Headline + CTA */}
-          <h1 className="text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px] text-white">
-            <span className=" bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold max-w-5xl text-center mt-4 md:leading-[70px] text-white">
+            <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
               Machine Learning{" "}
-            </span>{" "}
+            </span>
             Meets{" "}
-            <span className=" bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
+            <span className="bg-gradient-to-r from-indigo-700 to-indigo-600 bg-clip-text text-transparent text-nowrap">
               Market Intelligence{" "}
-            </span>{" "}
-            . Built for traders, analysts, and forward thinkers.{" "}
+            </span>
+            . Built for traders, analysts, and forward thinkers.
           </h1>
 
           <p className="max-w-md text-center text-base my-7 text-white">
-            Stock Insights Engineered With MERN & ML. Scalable architecture.
-            Smarter predictions.
+            Stock Insights Engineered With MERN & ML. Scalable architecture. Smarter predictions.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-4 ">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4">
             <a
               href="dashboard"
-              className="bg-green-600 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors"
+              className="bg-green-600 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center justify-center transition-colors"
             >
               Get started
               <svg
@@ -127,21 +113,13 @@ const Hero = () => {
             </a>
           </div>
 
-          <p className="py-6 text-slate-600 mt-14">
-            Trusting by leading brands, including
+          <p className="py-6 text-slate-600 mt-14 text-center px-4">
+            Trusted by leading brands, including
           </p>
 
-          <div
-            className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4"
-            id="logo-container"
-          >
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 max-w-full w-full px-4 py-6" id="logo-container">
             {logos.map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt="logo"
-                className="h-6 w-auto max-w-xs"
-              />
+              <img key={index} src={logo} alt="logo" className="h-6 w-auto max-w-xs" />
             ))}
           </div>
         </div>
