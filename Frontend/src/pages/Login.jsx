@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     if (!user.email || !user.pass) return;
 
-    fetch("https://stockly-ws2t.onrender.com/login", {
+    fetch("https://stockly-backend.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
