@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, memo } from "react";
 import TopGainers from "./TopGainers";
 import MarketData from "./MarketData";
+import Framer from "./Framer";
+
 
 function News() {
   const container = useRef();
@@ -30,7 +32,7 @@ function News() {
 
   return (
     <>
-
+     <Framer>
       <div className="w-full max-w-7xl mx-auto space-y-6 p-6 bg-[#0F0F0F] rounded-xl shadow-md mt-20">
         <h1 className="text-3xl font-bold text-white text-center">
           Top Market Stories
@@ -42,9 +44,10 @@ function News() {
 
         <div ref={container} className="h-[550px] w-full" />
       </div>
+       </Framer>
 
-      <TopGainers />
-      <MarketData />
+      <Framer><TopGainers /></Framer>
+       <Framer><MarketData /> </Framer>
     </>
   );
 }

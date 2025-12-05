@@ -91,7 +91,7 @@ function Overview() {
         >
           Microsoft stock price
         </a>
-        <span className="ml-1">by TradingView</span>
+        <span className="ml-1">STOCKLY</span>
       </div>
     </div>
   );

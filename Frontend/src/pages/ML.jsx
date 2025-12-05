@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Framer from "../Framer";
 
 const ML = () => {
   const [showStreamlit, setShowStreamlit] = useState(false);
@@ -9,6 +10,7 @@ const ML = () => {
 
   return (
     <div className="p-8 min-h-screen bg-slate-100 text-slate-800">
+      <Framer>
       <h2 className="text-2xl font-bold mb-4">📈 Prediction Portal</h2>
       <button
         onClick={handleClick}
@@ -16,6 +18,7 @@ const ML = () => {
       >
         Show Streamlit Forecast
       </button>
+      </Framer>
 
       {showStreamlit && (
         <div className="mt-8">

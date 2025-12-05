@@ -13,6 +13,8 @@ const Hero = () => {
 
   return (
     <>
+
+
       <div className="min-h-screen pb-20">
         {/* Mobile Menu */}
         <div
@@ -124,6 +126,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+
     </>
   );
 };

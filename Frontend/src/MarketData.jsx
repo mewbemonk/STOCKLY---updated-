@@ -84,7 +84,7 @@ function MarketData() {
       >
         Market summary
       </a>
-      <span className="ml-1">by TradingView</span>
+      <span className="ml-1">by STOCKLY</span>
     </div>
   </div>
 );

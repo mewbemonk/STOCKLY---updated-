@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../login.css';
+import Framer from "../Framer";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -43,8 +44,10 @@ const Register = () => {
   }
 
   return (
+    <Framer>
     <div className="auth-bg flex flex-col justify-center items-center min-h-screen px-4 py-8">
       <div className="w-full max-w-md bg-white shadow-xl rounded-xl p-6 sm:p-8">
+        <Framer>
         <form onSubmit={submit} className="space-y-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
             Create your account
@@ -107,8 +110,10 @@ const Register = () => {
             Register
           </button>
         </form>
+        </Framer>
       </div>
     </div>
+    </Framer>
   );
 };
 

@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Banner from "./pages/Home/Banner.jsx";
+import Framer from "./Framer.jsx";
 
 const Nav = () => {
   return (
     <>
-      <Banner />
+     <Framer> <Banner /></Framer>
 
 <nav className="z-50 flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between w-full gap-4 md:gap-0 py-4 px-4 sm:px-6 md:px-16 lg:px-24 xl:px-40 text-sm bg-slate-900">
   <span className="text-orange-400 font-bold text-3xl sm:text-4xl whitespace-nowrap">STOCKLY</span>
