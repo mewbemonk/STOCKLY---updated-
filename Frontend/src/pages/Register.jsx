@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../login.css';
-import Framer from "../Framer";
+import Framer from "../Component/Framer";
+
 
 const Register = () => {
   const [user, setUser] = useState({

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, memo } from "react";
-import TopGainers from "./TopGainers";
-import MarketData from "./MarketData";
-import Framer from "./Framer";
+import TopGainers from "../Component/TopGainers";
+import MarketData from "../Component/MarketData";
+import Framer from "../Component/Framer";
+
 
 
 function News() {

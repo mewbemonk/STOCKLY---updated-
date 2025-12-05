@@ -1,15 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./Layout.jsx";
-import Home from "./pages/Home/Home.jsx";
-import Register from "./pages/Register.jsx";
-import Login from "./pages/Login.jsx";
-import Freeze from "./Freeze.jsx";
+import Login from "./Pages/Login.jsx";
+import Register from "./Pages/Register.jsx";
 import { useState } from "react";
-import Dashboard from "./Dashboard.jsx";
-import News from "./News.jsx";
-import ML from "./pages/ML.jsx";
-
-
+import Layout from "./Pages/Layout.jsx";
+import Home from "./Pages/Home.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
+import News from "./Pages/News.jsx";
+import ML from "./Pages/ML.jsx"
 
 
 
@@ -21,13 +18,13 @@ const App = () => {
       path: "/",
       element: (
         
-          <Layout />
+          <Layout/>
         
       ),
 
       children: [
         {
-          path: "/",
+          index:true,
           element:<Home />       
         },
         {
@@ -37,7 +34,7 @@ const App = () => {
         },
         {
           path: "news",
-          element: <News setIsLoggedIn={setIsLoggedIn} />,
+          element: <News/>,
         },
         {
           path: "register",
@@ -49,7 +46,7 @@ const App = () => {
         },
         {
           path: "predict",
-          element: <ML />,
+          element: <ML/>,
         },
         
         

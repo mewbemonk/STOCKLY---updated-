@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Framer from "../Framer";
+import Framer from "../Component/Framer";
+
 
 const ML = () => {
   const [showStreamlit, setShowStreamlit] = useState(false);

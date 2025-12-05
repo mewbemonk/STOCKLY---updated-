@@ -1,8 +1,9 @@
 import { useState } from "react";
 import '../login.css';
-import Framer from "../Framer";
+import Framer from "../Component/Framer";
 
-const Login = ({ setIsLoggedIn }) => {
+
+const Login = () => {
   const [user, setUser] = useState({
     email: "",
     pass: "",

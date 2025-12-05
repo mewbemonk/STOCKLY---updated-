@@ -92,7 +92,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4">
             <a
-              href="dashboard"
+              href="/"
               className="bg-green-600 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center justify-center transition-colors"
             >
               Get started

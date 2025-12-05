@@ -1,8 +1,9 @@
 import {Outlet} from 'react-router-dom'
-import Nav from './Nav.jsx'
-import Footer from "./Footer.jsx";
-import TickerTape from './TickerTape.jsx'
-import Framer from './Framer.jsx';
+import Nav from '../Component/Nav.jsx'
+import Footer from "../Component/Footer.jsx";
+import TickerTape from '../Component/TickerTape.jsx'
+import Framer from '../Component/Framer.jsx';
+
 
 
 const Layout = ()=>{
