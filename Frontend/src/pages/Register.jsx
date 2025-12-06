@@ -27,7 +27,7 @@ const Register = () => {
     setData((prev) => [...prev, user]);
     setUser({ name: "", email: "", pass: "" });
 
-    fetch('https://stockly-backend.onrender.com', {
+    fetch('https://stockly-backend.onrender.com/register', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
