@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Pages/Login.jsx";
-import Register from "./Pages/Register.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 import { useState } from "react";
-import Layout from "./Pages/Layout.jsx";
-import Home from "./Pages/Home.jsx";
-import Dashboard from "./Pages/Dashboard.jsx";
-import News from "./Pages/News.jsx";
-import ML from "./Pages/ML.jsx"
+import Layout from "./pages/Layout.jsx";
+import Home from "./pages/Home.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import News from "./pages/News.jsx";
+import ML from "./pages/ML.jsx"
 
 
 

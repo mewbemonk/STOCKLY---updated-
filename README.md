@@ -1,6 +1,6 @@
-# 📈 StockVerse – Track, Compare & Predict Stocks
+# 📈 STOCKLY – Track, Compare & Predict Stocks
 
-Welcome to **StockVerse**, a full-stack MERN + ML-powered platform where users can:
+Welcome to **STOCKLY**, a full-stack MERN + ML-powered platform where users can:
 - 🔍 View current stock prices
 - 📊 Compare multiple stocks
 - 📰 Read daily stock news
