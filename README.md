@@ -16,7 +16,7 @@ Welcome to **STOCKLY**, a full-stack MERN + ML-powered platform where users can:
 - **Database**: MongoDB (Mongoose)
 - **Authentication**: JWT + bcrypt
 - **ML Model**: Streamlit (deployed on Streamlit Cloud)
-- **Deployment**: Vercel (React) + Streamlit Cloud (ML)
+- **Deployment**: Render: (React) + Streamlit Cloud (ML)
 
 ---
 
@@ -32,36 +32,64 @@ Welcome to **STOCKLY**, a full-stack MERN + ML-powered platform where users can:
 ---
 
 ## 📂 Folder Structure
+
 STOCKLY/
-│
-├── Dashboard/              # Optional admin or analytics dashboard (React or template-based)
-│   └── components/         # Reusable UI widgets (charts, tables, etc.)
-│   └── pages/              # Dashboard views (e.g., user stats, stock trends)
-│
-├── frontend/               # React frontend
-│   └── public/             # Static assets (favicon, index.html)
-│   └── src/
-│       ├── components/     # Reusable UI components (Navbar, Card, etc.)
-│       ├── pages/          # Main views (Home, Compare, News, Login)
-│       ├── services/       # API calls (e.g., fetch stock data, auth)
-│       ├── utils/          # Helper functions (formatting, validation)
-│       └── App.js          # Main app entry
-│
-├── Backend/                # Express backend
-│   └── controllers/        # Route logic (auth, stocks, news)
-│   └── models/             # Mongoose schemas (User, Stock)
-│   └── routes/             # API endpoints
-│   └── middleware/         # Auth, error handling
-│   └── config/             # DB connection, environment setup
-│   └── server.js           # Entry point
-│
-├── ML_model/               # Streamlit ML app
-│   └── model/              # Trained model files (.pkl, .joblib)
-│   └── utils/              # Preprocessing, prediction logic
-│   └── app.py              # Streamlit app entry
-│   └── requirements.txt    # Python dependencies
-│
-└── README.md               # Project overview and setup
+├── Backend
+    ├── package-lock.json
+    ├── package.json
+    └── src
+    │   ├── db.js
+    │   ├── paths
+    │       ├── login.js
+    │       └── register.js
+    │   ├── route.js
+    │   ├── schema.js
+    │   └── server.js
+├── Frontend
+    ├── .gitignore
+    ├── README.md
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── src
+    │   ├── App.css
+    │   ├── App.jsx
+    │   ├── Component
+    │   │   ├── Badge.jsx
+    │   │   ├── Banner.jsx
+    │   │   ├── CTA.jsx
+    │   │   ├── Feature.jsx
+    │   │   ├── Footer.jsx
+    │   │   ├── Framer.jsx
+    │   │   ├── Freeze.jsx
+    │   │   ├── Hero.jsx
+    │   │   ├── MarketData.jsx
+    │   │   ├── Nav.jsx
+    │   │   ├── Overview.jsx
+    │   │   ├── Stock.jsx
+    │   │   ├── Testimonial.jsx
+    │   │   ├── TickerTape.jsx
+    │   │   ├── TopGainers.jsx
+    │   │   └── Updates.jsx
+    │   ├── index.css
+    │   ├── login.css
+    │   ├── main.jsx
+    │   └── pages
+    │   │   ├── Dashboard.jsx
+    │   │   ├── Home.jsx
+    │   │   ├── Layout.jsx
+    │   │   ├── Login.jsx
+    │   │   ├── ML.jsx
+    │   │   ├── News.jsx
+    │   │   └── Register.jsx
+    └── vite.config.js
+├── ML_model
+    ├── README.md
+    ├── app.py
+    ├── requirements.txt
+    └── testing.ipynb
+└── README.md
 
 
 
@@ -74,7 +102,7 @@ STOCKLY/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/stockverse.git
+git clone https://github.com/mewbemonk/STOCKLY---updated-.git
 cd STOCKLY
 
 
@@ -86,7 +114,7 @@ npm run dev        # Starts the frontend dev server at localhost:5173
 # Backend Setup
 cd ../Backend
 npm install        # Installs Express and other backend dependencies
-npm start          # Or: node server.js (depending on your setup)
+node server.js          
 
 
 
