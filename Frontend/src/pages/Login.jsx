@@ -31,6 +31,7 @@ const Login = ({ setIsLoggedIn }) => {
           alert("Login successful!");
           localStorage.setItem("isLoggedIn", "true");
           setIsLoggedIn(true);
+          navigate("/");
         } else {
           alert("Invalid credentials");
         }
