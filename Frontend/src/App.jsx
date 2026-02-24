@@ -6,53 +6,50 @@ import Layout from "./pages/Layout.jsx";
 import Home from "./pages/Home.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import News from "./pages/News.jsx";
-import ML from "./pages/ML.jsx"
-
-
+import ML from "./pages/ML.jsx";
 
 const App = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem("isLoggedIn") === "true";
+  });
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        
-          <Layout/>
-        
+      element: !isLoggedIn ? (
+        <Login setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <Layout />
       ),
 
-      children: [
-        {
-          index:true,
-          element:<Home />       
-        },
-        {
-          path:'dashboard',
-          element: <Dashboard />
-
-        },
-        {
-          path: "news",
-          element: <News/>,
-        },
-        {
-          path: "register",
-          element: <Register />,
-        },
-        {
-          path: "login",
-          element: <Login />,
-        },
-        {
-          path: "predict",
-          element: <ML/>,
-        },
-        
-        
-        
-
-      ],
+      children: isLoggedIn
+        ? [
+            {
+              index: true,
+              element: <Home />,
+            },
+            {
+              path: "dashboard",
+              element: <Dashboard />,
+            },
+            {
+              path: "news",
+              element: <News />,
+            },
+            {
+              path: "predict",
+              element: <ML />,
+            },
+          ]
+        : [],
+    },
+    {
+      path: "/login",
+      element: <Login setIsLoggedIn={setIsLoggedIn} />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
   return (
