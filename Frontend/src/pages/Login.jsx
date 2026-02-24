@@ -1,9 +1,9 @@
 import { useState } from "react";
-import '../login.css';
+import "../login.css";
 import Framer from "../Component/Framer";
+import { Link } from "react-router-dom";
 
-
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [user, setUser] = useState({
     email: "",
     pass: "",
@@ -21,14 +21,15 @@ const Login = () => {
     fetch("https://stockly-backend-no6y.onrender.com/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
           alert("Login successful!");
+          localStorage.setItem("isLoggedIn", "true");
           setIsLoggedIn(true);
         } else {
           alert("Invalid credentials");
@@ -39,60 +40,78 @@ const Login = () => {
 
   return (
     <Framer>
-    <div className="auth-bg flex flex-col justify-center items-center min-h-screen px-4 py-8">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-xl p-6 sm:p-8">
-         <Framer>
-         <form onSubmit={submit} className="space-y-6">
-          <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
-            Sign in to your account
-          </h1>
+      <div className="auth-bg flex flex-col justify-center items-center min-h-screen px-4 py-8">
+        <div className="w-full max-w-md bg-white shadow-xl rounded-xl p-6 sm:p-8">
+          <Framer>
+            <form onSubmit={submit} className="space-y-6">
+              <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
+                Sign in to your account
+              </h1>
 
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={user.email}
-              onChange={handleInput}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-orange-500 focus:ring-orange-500 focus:outline-none"
-              placeholder="you@example.com"
-            />
-          </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email address
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={user.email}
+                  onChange={handleInput}
+                  className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-orange-500 focus:ring-orange-500 focus:outline-none"
+                  placeholder="you@example.com"
+                />
+              </div>
 
-          <div>
-            <label htmlFor="pass" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              id="pass"
-              name="pass"
-              type="password"
-              autoComplete="current-password"
-              required
-              value={user.pass}
-              onChange={handleInput}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-orange-500 focus:ring-orange-500 focus:outline-none"
-              placeholder="••••••••"
-            />
-          </div>
+              <div>
+                <label
+                  htmlFor="pass"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Password
+                </label>
+                <input
+                  id="pass"
+                  name="pass"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={user.pass}
+                  onChange={handleInput}
+                  className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-orange-500 focus:ring-orange-500 focus:outline-none"
+                  placeholder="••••••••"
+                />
+              </div>
 
-          <button
-            type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-md transition duration-300 shadow-sm"
-          >
-            Login
-          </button>
-        </form>
-         </Framer>
+              <button
+                type="submit"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-md transition duration-300 shadow-sm"
+              >
+                Login
+              </button>
+              <div className="text-center mt-4">
+                <p className="text-sm text-gray-600">
+                  Don't have an account?{" "}
+                  <Link
+                    to="/register"
+                    className="text-orange-500 hover:text-orange-600 font-semibold"
+                  >
+                    Register
+                  </Link>
+                </p>
+              </div>
+            </form>
+          </Framer>
+        </div>
       </div>
-    </div>
     </Framer>
   );
 };
 
 export default Login;
+
